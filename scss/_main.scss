@@ -1,0 +1,92 @@
+@font-face {
+   font-family: yekan;
+   src: url(../fonts/Yekan.ttf);
+}
+
+:root {
+   --color-primary: #03ca9b;
+   --bg: #fff;
+   --black: #333;
+   --light-bg: #f8f8f8;
+   --light-color: #666;
+   --border: 1px solid rgba(0, 0, 0, 0.1);
+   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+   --box-shadow1: -5px 5px 10px rgba(0, 0, 0, 0.3);
+   --bg-pink-gradient: linear-gradient(
+      to left,
+      rgb(254 132 100) 0,
+      rgb(254 110 154) 100%
+   );
+   --bg-green-gradient: linear-gradient(
+      to left,
+      rgb(51 200 193) 0,
+      rgb(17 155 210) 100%
+   );
+   --bg-blue-gradient: linear-gradient(
+      to left,
+      rgb(54 28 193) 0,
+      rgb(46 130 239) 100%
+   );
+}
+
+.dark {
+   --black: #fff;
+   --bg: #262626;
+   --light-bg: #282828;
+   --light-color: #eee;
+   --border: 1px solid rgba(255, 255, 255, 0.1);
+   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+   --box-shadow1: -5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* css reset */
+* {
+   margin: 0;
+   padding: 0;
+   direction: ltr;
+   list-style: none;
+   text-decoration: none;
+   box-sizing: border-box;
+   // font-family: yekan;
+   position: relative;
+}
+
+body {
+   overflow-x: hidden;
+   background-color: var(--light-bg);
+   transition: 0.3s;
+}
+
+@mixin d-flex($justify: flex-start, $align: flex-start) {
+   display: flex;
+   justify-content: $justify;
+   align-items: $align;
+}
+
+/* preloader starts */
+.preloader {
+   position: fixed;
+   z-index: 99;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   @include d-flex(center, center);
+   background: lightgray;
+   & > img {
+      width: 100px;
+   }
+
+   &.hidden {
+      animation: fadeOut 1s;
+      animation-fill-mode: forwards;
+   }
+}
+
+@keyframes fadeOut {
+   100% {
+      opacity: 0;
+      visibility: hidden;
+   }
+}
+/* preloader ends */
