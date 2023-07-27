@@ -165,7 +165,7 @@ body {
   background: red;
 }
 #main aside {
-  grid-template-columns: span 1;
+  grid-column: span 1;
   background: var(--bg);
   height: 100%;
   padding: 20px;
@@ -185,7 +185,7 @@ body {
   width: 100%;
 }
 #main main {
-  grid-template-columns: span 1;
+  grid-column: span 1;
   background: var(--bg2);
   height: 100%;
   padding: 50px;
@@ -218,7 +218,6 @@ body {
   grid-column: span 4;
   grid-row: 9/-1;
   background: url(../images/porse.png);
-  background-position: center;
   background-size: cover;
   outline: 2px solid var(--color-primary-500);
   outline-offset: 5px;
